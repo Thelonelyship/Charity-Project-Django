@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,66 @@
     <link rel="stylesheet" href="{% static 'charitycheck/styles.css' %}">
     <title>Charity Checker</title>
 </head>
+
 <body>
 
     <h1>Charity Check UK</h1>
 
-<div class="searchcontainer">
-    <form method="POST" action="{% url 'index' %}">
+    <div class="searchcontainer">
+        <form method="POST" action="{% url 'index' %}">
             {% csrf_token %}
             <label for="charity_name">Enter Charity Name:</label>
             <input type="text" id="charity_name" name="charity_name" required>
             <button type="submit">Search</button>
-    </form>
-</div>
+        </form>
+    </div>
 
-{% if charity_name %}
-    <div class="charity-details">
+    {% if charity_name %}
+    <div class="maindiv">
         <h2>{{ charity_name }}</h2>
-        <div class="info">
-            <p>Registered Charity Number: {{reg_charity_number}}</p>
-            <p>Status:{{reg_status}}</p>
-            <p>Registered On: {{date_of_registration}}</p>
-            <p>Last Updated: {{last_modified_time }}</p>
+        <div class="charitydetails">
+            <div class="info">
+                <h3>Registration Information</h3>
+                <p>Registered Charity Number: {{reg_charity_number}}</p>
+                <p>Status:{{reg_status}}</p>
+                <p>Registered On: {{date_of_registration}}</p>
+                <p>Last Updated: {{last_modified_time }}</p>
+            </div>
+            <img src="{% static 'charitycheck/turn.png' %}" width="180px" alt="">
+            <div class="contact-info">
+                <h3>Contact Information:</h3>
+                <p>Address: {{address_line_one|default:"unavailable"}}</p>
+                <p>Address: {{address_line_two|default:"unavailable"}}</p>
+                <p>Postcode: {{address_post_code|default:"unavailable" }}</p>
+                <p>Phone: {{phone|default:"unavailable"}}</p>
+                <p>Email: {{email|default:"unavailable"}}</p>
+                <p>Website: {{web|default:"unavailable"}}</p>
+            </div>
+        </div>
+        <h3 class="financetitle">Financial Overview:</h3>
+        <div class="finances">
+
+            <div class="inc">
+                <h3>Incoming Money</h3>
+                <p>Latest Income: £{{latest_income|default:"unavailable"}}</p>
+                <p>Total Income: £{{inc_total|default:"unavailable"}}</p>
+            </div>
+            <div class="exp">
+                <h3>Outgoing Money</h3>
+                <p>Latest Expenditure: £{{latest_expenditure|default:"unavailable"}}</p>
+                <p>Total Expenditure: £{{exp_total|default:"unavailable"}}</p>
+            </div>
         </div>
 
-<div class="contact-info">
-    <h3>Contact Information:</h3>
-        <p>Address: {{address_line_one|default:"unavailable"}}</p>
-        <p>Address: {{address_line_three|default:" "}}</p>
-        <p>Postcode: {{address_post_code|default:"unavailable" }}</p>
-        <p>Phone: {{phone|default:"unavailable"}}</p>
-        <p>Phone: {{email|default:"unavailable"}}</p>
-        <p>Website: {{web|default:"unavailable"}}</p>
-</div>
-    {% endif %}
+        <div class="cause">
+            <h3>Actual Charity Spendings</h3>
+            <p>Amount spent on charitable causes: £{{exp_charitable_activities|default:"unavailable"}}</p>
+            <p>Amount given to charity per pound: £{{perpound_total|default:"unavailable"}}</p>
+        </div>
+
+        {% endif %}
+    </div>
 
 </body>
+
 </html>

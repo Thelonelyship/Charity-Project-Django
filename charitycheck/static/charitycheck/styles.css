@@ -5,22 +5,76 @@
 }
 
 body{
-    background-image: linear-gradient(black, rgb(90, 154, 175), rgb(90, 154, 175), black);
+    background-image: linear-gradient(black, rgba(0, 82, 27, 0.89), black);
     overflow-x: hidden;
     height: 100vh;
 }
 
+.maindiv{
+    display: flex;
+    flex-direction: column;
+}
+
 h1{
+    position: relative;
     text-align: center;
     color: white;
-    font-size: 80px;
+    font-size: 60px;
+}
+
+h2{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+h3{
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    color: aquamarine;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 20px;
+}
+
+p{
+    position: relative;
+    color: rgb(149, 238, 250);
+    text-shadow: 1px 1px 3px rgb(177, 0, 177);
+    font-size: 18px;
 }
 
 .searchcontainer{
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 40px;
+    color: white;
+    font-size: 15px;
+}
+
+input, button{
+    height: 25px;
+    border-radius: 12px;
+}
+
+input{
+    padding: 10px;
+}
+
+button{
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 255, 255, 0.678);
+    box-shadow: 3px 3px 3px purple;
+    width: 150px;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: rgba(255, 51, 0, 0.719);
+    color: white;
+    cursor: pointer;
 }
 
 .searchbar{
@@ -31,59 +85,78 @@ button{
     height: 30px;
 }
 
-.name{
-    text-align: center;
-    color: white;
-    font-size: 80px;
-}
-
-.modified{
-    text-align: center;
-    color: white;
-    font-size: 20px;
-}
-
-.regstatus{
+.charitydetails{
+    position: relative;
     display: grid;
-    grid-template-columns: 1fr, 1fr;
+    grid-template-columns: 1fr, 1fr, 1fr;
     justify-content: center;
-    align-items: center;
-    gap: 20%;
-}
-
-.regstatus{
-    grid-column: 1;
-}
-
-.regdate{
-    grid-column: 2;
 }
 
 .info{
-    display: grid;
-    grid-template-columns: 1fr, 1fr;
-    justify-content: center;
-    align-items: center;
-    gap: 20%;
-}
-
-.regnumber{
+    padding: 12px;
     grid-column: 1;
+    background: hsl(27, 5%, 11%, 0.04);
+    backdrop-filter: blur(5px) brightness(125%);
+    border-radius: 15px;
 }
 
-.previousnames{
+img{
     grid-column: 2;
 }
 
-.details{
+.contact-info{
+    grid-column: 3;
+    padding: 12px;
+    background: hsl(27, 5%, 11%, 0.04);
+    backdrop-filter: blur(5px) brightness(125%);
+    border-radius: 15px;
+}
+
+.finances{
     display: grid;
     grid-template-columns: 1fr, 1fr;
     justify-content: center;
-    align-items: center;
-    gap: 20%;
+    gap: 15%;
+    padding: 15px;
+    line-height: 1.8rem;
+    padding: 20px;
 }
 
-.contact{
+.finances h3{
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    color: aquamarine;
+    text-shadow: 1px 1px 2px black;
+    margin-bottom: 5px;
+}
+
+.inc{
     grid-column: 1;
+    background: hsl(27, 5%, 11%, 0.04);
+    backdrop-filter: blur(5px) brightness(125%);
+    border-radius: 15px;
+    padding: 20px;
+}
+.exp{
+    grid-column: 2;
+    background: hsl(27, 5%, 11%, 0.04);
+    backdrop-filter: blur(5px) brightness(125%);
+    border-radius: 15px;
+    padding: 20px;
 }
 
+.financetitle{
+    margin-top: 20px;
+    text-align: center;
+    color: rgb(7, 255, 255);
+    text-shadow: 2px 2px 5px black;
+    font-size: 40px;
+}
+
+.cause{
+    position: relative;
+    text-align: center;
+    line-height: 1.8rem;
+    margin-bottom: 30px;
+}
