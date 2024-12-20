@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'charitycheck/styles.css' %}">
+    <title>Charity Checker</title>
+</head>
+<body>
+
+    <h1>Charity Check UK</h1>
+
+<div class="searchcontainer">
+    <form method="POST" action="{% url 'index' %}">
+            {% csrf_token %}
+            <label for="charity_name">Enter Charity Name:</label>
+            <input type="text" id="charity_name" name="charity_name" required>
+            <button type="submit">Search</button>
+    </form>
+</div>
+
+{% if charity_name %}
+    <div class="charity-details">
+        <h2>{{ charity_name }}</h2>
+        <div class="info">
+            <p>Registered Charity Number: {{reg_charity_number}}</p>
+            <p>Status:{{reg_status}}</p>
+            <p>Registered On: {{date_of_registration}}</p>
+            <p>Last Updated: {{last_modified_time }}</p>
+        </div>
+
+<div class="contact-info">
+    <h3>Contact Information:</h3>
+        <p>Address: {{address_line_one|default:"unavailable"}}</p>
+        <p>Address: {{address_line_three|default:" "}}</p>
+        <p>Postcode: {{address_post_code|default:"unavailable" }}</p>
+        <p>Phone: {{phone|default:"unavailable"}}</p>
+        <p>Phone: {{email|default:"unavailable"}}</p>
+        <p>Website: {{web|default:"unavailable"}}</p>
+</div>
+    {% endif %}
+
+</body>
+</html>

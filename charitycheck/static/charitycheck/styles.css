@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(black, rgb(90, 154, 175), rgb(90, 154, 175), black);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 80px;
+}
+
+.searchcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.searchbar{
+    height: 30px;
+}
+
+button{
+    height: 30px;
+}
+
+.name{
+    text-align: center;
+    color: white;
+    font-size: 80px;
+}
+
+.modified{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.regstatus{
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+.regstatus{
+    grid-column: 1;
+}
+
+.regdate{
+    grid-column: 2;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+.regnumber{
+    grid-column: 1;
+}
+
+.previousnames{
+    grid-column: 2;
+}
+
+.details{
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+.contact{
+    grid-column: 1;
+}
+
