@@ -25,6 +25,28 @@
     {% if charity_name %}
     <div class="maindiv">
         <h2>{{ charity_name }}</h2>
+<h3 class="financetitle">Financial Overview:</h3>
+        <div class="finances">
+            <div class="inc">
+                <h3>Incoming Money</h3>
+                <p>Income: £{{latest_income|default:"unavailable"}}</p>
+            </div>
+            
+            <div class="cause">
+                <h3>Actual Charity Spendings</h3>
+                <p>Amount spent on charitable causes: £{{exp_charitable_activities|default:"unavailable"}}</p>
+                <p>Amount given to charity per pound:</p> 
+                <p class="actual">£{{perpound_total|default:"unavailable"}}</p>
+                <p class="warning">If it shows £1.00, it is because it's over 99p and is rounded up - Excellent charity!</p>
+                <p class="warning">If it shows £0.00, it is because there is currently not enough data available</p>
+            </div>
+            <div class="exp">
+                <h3>Outgoing Money</h3>
+                <p>Expenditure: £{{latest_expenditure|default:"unavailable"}}</p>
+            </div>
+        </div>
+
+
         <div class="charitydetails">
             <div class="info">
                 <h3>Registration Information</h3>
@@ -43,26 +65,6 @@
                 <p>Email: {{email|default:"unavailable"}}</p>
                 <p>Website: {{web|default:"unavailable"}}</p>
             </div>
-        </div>
-        <h3 class="financetitle">Financial Overview:</h3>
-        <div class="finances">
-
-            <div class="inc">
-                <h3>Incoming Money</h3>
-                <p>Latest Income: £{{latest_income|default:"unavailable"}}</p>
-                <p>Total Income: £{{inc_total|default:"unavailable"}}</p>
-            </div>
-            <div class="exp">
-                <h3>Outgoing Money</h3>
-                <p>Latest Expenditure: £{{latest_expenditure|default:"unavailable"}}</p>
-                <p>Total Expenditure: £{{exp_total|default:"unavailable"}}</p>
-            </div>
-        </div>
-
-        <div class="cause">
-            <h3>Actual Charity Spendings</h3>
-            <p>Amount spent on charitable causes: £{{exp_charitable_activities|default:"unavailable"}}</p>
-            <p>Amount given to charity per pound: £{{perpound_total|default:"unavailable"}}</p>
         </div>
 
         {% endif %}
