@@ -222,4 +222,15 @@ img {
     align-items: center;
 }
 
+.cause{
+    grid-row: 1;
+}
+.exp{
+    grid-row: 2;
+}
+.inc{
+    grid-row: 3;
+}
+
+
 }
