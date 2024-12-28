@@ -186,7 +186,7 @@ img{
 }
 
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 p{
     text-align: center;
 }
@@ -220,6 +220,13 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    margin-left: 5%;
+    margin-right: 25%;
+}
+
+input{
+    margin-bottom: 30px;
 }
 
 .cause{
